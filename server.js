@@ -74,9 +74,11 @@ wss.on('connection', (ws) => {
 
     const clean = { ...oldPresence };
 
+    // 플레이어 정보와 몬스터 위치 정보를 함께 저장
     for (const key of [
       'n', 'x', 'y', 'f', 'a', 's',
-      'j', 'l', 'h', 'm', 'hit', 'heal'
+      'j', 'l', 'h', 'm', 'hit', 'heal',
+      'mon'
     ]) {
       if (patch[key] !== undefined) {
         clean[key] = patch[key];
